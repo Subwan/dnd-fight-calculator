@@ -1,0 +1,30 @@
+@import 'assets/colors.scss';
+@import 'assets/fonts.scss';
+
+.buttonBlock {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: $gray300;
+  font-family: $main-font-family;
+
+  &:focus {
+    outline: 0;
+  }
+
+  .buttonImg {
+    width: 20px;
+    pointer-events: none;
+  }
+}
+
+.add {
+  margin-left: 20px;
+}
+
+.delete {
+  margin-right: 20px;
+}

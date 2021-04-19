@@ -1,0 +1,67 @@
+@import 'assets/colors.scss';
+@import 'assets/fonts.scss';
+
+.cardBlock {
+  width: 60px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: $gray300;
+  margin-bottom: 20px;
+  user-select: none;
+
+  .cardIndex {
+    margin: 8px 0;
+    font-size: 12px;
+    line-height: 14px;
+    color: $black;
+  }
+
+  .LevelsButtonBlock {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+
+    .LevelsButton {
+      width: 50%;
+      height: 20px;
+      padding: 0;
+      margin: 4px 0;
+      border: none;
+      cursor: pointer;
+      background-color: $gray300;
+
+      &:focus {
+        outline: 0;
+      }
+
+      .cardImg {
+        width: 16px;
+        pointer-events: none;
+      }
+    }
+
+    .add {
+      border-left: 1px solid $gray500;
+    }
+  }
+}
+
+.cardMarginLeft {
+  margin-left: 20px;
+}
+
+.cardValue {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  line-height: 24px;
+  border-top: 1px solid $gray500;
+  border-bottom: 1px solid $gray500;
+  background-color: $gray200;
+  color: $black;
+  font-family: $main-font-family;
+  text-align: center;
+}

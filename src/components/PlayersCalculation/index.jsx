@@ -1,10 +1,14 @@
 import React from 'react';
 
-export const PlayersCalculation = () => {
+import { PlayersBlock } from './PlayersBlock';
+
+import styles from './styles.module.scss';
+
+export const PlayersCalculation = ({players, onPlayersChange}) => {
 
   return (
-    <div>
-      
+    <div className={styles.mainBlock}>
+      <PlayersBlock players={players} onPlayersChange={onPlayersChange} />
     </div>
-  )
+  );
 };
