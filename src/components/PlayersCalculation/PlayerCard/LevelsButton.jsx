@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Plus, Minus } from 'assets/img';
-
 import { BUTTON_TYPE } from 'constants/common';
 
 import styles from './styles.module.scss';

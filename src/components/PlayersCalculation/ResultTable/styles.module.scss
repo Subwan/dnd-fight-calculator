@@ -1,0 +1,35 @@
+@import 'assets/colors.scss';
+
+.resultTable {
+  width: 80%;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  .difficultName {
+    padding: 8px 0 8px 8px;
+  }
+
+  .difficult {
+    text-align: center;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+    padding: 0;
+  }
+
+  .easy {
+    background-color: $easyDifficult;
+  }
+
+  .medium {
+    background-color: $mediumDifficult;
+  }
+
+  .hard {
+    background-color: $hardDifficult;
+  }
+
+  .deadly {
+    background-color: $deadlyDifficult;
+  }
+}

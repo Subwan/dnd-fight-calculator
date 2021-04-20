@@ -11,6 +11,20 @@ export const PLAYERS_COUNT = {
   MAX: 8,
 };
 
+export const FIGHT_DIFFICULT_TYPE = {
+  EASY: 'easy',
+  MEDIUM: 'medium',
+  HARD: 'hard',
+  DEADLY: 'deadly',
+};
+
+export const FIGHT_DIFFICULT_TYPE_NAME = {
+  [FIGHT_DIFFICULT_TYPE.EASY]: 'Лёгкая',
+  [FIGHT_DIFFICULT_TYPE.MEDIUM]: 'Средняя',
+  [FIGHT_DIFFICULT_TYPE.HARD]: 'Трудная',
+  [FIGHT_DIFFICULT_TYPE.DEADLY]: 'Смертельная',
+};
+
 export const FIGHT_DIFFICULT_PER_LVL = {
   1: { easy: 25, medium: 50, hard: 75, deadly: 100 },
   2: { easy: 50, medium: 100, hard: 150, deadly: 200 },

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { CircleButton } from 'components/Common/CircleButton';
-import { PlayerCard } from 'components/Common/PlayerCard';
+import { PlayerCard } from './PlayerCard';
 
-import { DEFAULT_PLAYER, PLAYERS_COUNT, LEVELS } from 'constants/players';
+import { PLAYERS_COUNT, LEVELS } from 'constants/players';
 import { BUTTON_TYPE } from 'constants/common';
 
 import styles from './styles.module.scss';
@@ -17,7 +17,7 @@ export const PlayersBlock = ({players, onPlayersChange}) => {
         return null;
       }
 
-      newPlayers.push(DEFAULT_PLAYER);
+      newPlayers.push(players[0]);
     } else {
       if (players.length <= PLAYERS_COUNT.MIN) {
         return null;
