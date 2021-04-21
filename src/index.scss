@@ -1,13 +1,31 @@
 @import 'assets/fonts.scss';
+@import 'assets/colors.scss';
 
 body {
   margin: 0;
   font-family: $main-font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: $black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.easy {
+  background-color: $easyDifficult;
+}
+
+.medium {
+  background-color: $mediumDifficult;
+}
+
+.hard {
+  background-color: $hardDifficult;
+}
+
+.deadly {
+  background-color: $deadlyDifficult;
 }

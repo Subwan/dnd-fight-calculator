@@ -67,7 +67,7 @@ export const PlayersBlock = ({players, onPlayersChange}) => {
 
     return (
       <CircleButton
-        classNames={styles.managePlayersButton}
+        styleClass={`${styles.managePlayersButton} ${styles.delete}`}
         type={BUTTON_TYPE.DELETE}
         onClick={onPlayersButtonClick}
       />
@@ -81,7 +81,7 @@ export const PlayersBlock = ({players, onPlayersChange}) => {
 
     return (
       <CircleButton
-        classNames={styles.managePlayersButton}
+        styleClass={`${styles.managePlayersButton} ${styles.add}`}
         type={BUTTON_TYPE.ADD}
         onClick={onPlayersButtonClick}
       />
@@ -102,8 +102,16 @@ export const PlayersBlock = ({players, onPlayersChange}) => {
       </div>
       <div className={styles.addLevelsToAll}>
         <p className={styles.levelsInfo}>Изменения уровня для всех игроков:</p>
-        <CircleButton type={BUTTON_TYPE.DELETE} onClick={onLevelsButtonClick} />
-        <CircleButton type={BUTTON_TYPE.ADD} onClick={onLevelsButtonClick} />
+        <CircleButton
+          styleClass={styles.delete}
+          type={BUTTON_TYPE.DELETE}
+          onClick={onLevelsButtonClick}
+        />
+        <CircleButton
+          styleClass={styles.add}
+          type={BUTTON_TYPE.ADD}
+          onClick={onLevelsButtonClick}
+        />
       </div>
     </div>
   );

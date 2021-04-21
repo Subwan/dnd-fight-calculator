@@ -6,7 +6,7 @@ import { ResultsBlock } from './ResultsBlock';
 import styles from './styles.module.scss';
 
 export const PlayersCalculation = ({players, onPlayersChange}) => (
-  <div className={styles.mainBlock}>
+  <div className={styles.playersCalculationBlock}>
     <PlayersBlock players={players} onPlayersChange={onPlayersChange} />
     <ResultsBlock players={players} />
   </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { MonstersCalculation } from 'components/MonstersCalculation';
 import { PlayersCalculation } from 'components/PlayersCalculation';
 
 import { DEFAULT_PLAYERS } from 'constants/players';
@@ -7,13 +8,10 @@ import { DEFAULT_PLAYERS } from 'constants/players';
 export const MainPage = () => {
   const [players, setPlayers] = useState(DEFAULT_PLAYERS);
 
-  const onPlayersChange = (newPlayers) => {
-    setPlayers(newPlayers);
-  };
-
   return (
     <div>
-      <PlayersCalculation players={players} onPlayersChange={onPlayersChange} />
+      <PlayersCalculation players={players} onPlayersChange={setPlayers} />
+      <MonstersCalculation players={players} />
     </div>
   );
 };

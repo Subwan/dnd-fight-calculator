@@ -1,0 +1,103 @@
+@import 'assets/colors';
+@import 'assets/fonts';
+
+$mosterCardHeight: 100px;
+
+.monsersCalculationBlock {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.monstersBlock {
+  width: 60%;
+  height: max-content;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+
+  .monstersButtons {
+    height: $mosterCardHeight;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+
+  .monsterCardsBlock {
+    margin-left: 20px;
+  }
+}
+
+.monsterCard {
+  width: 200px;
+  height: $mosterCardHeight;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  background-color: $gray300;
+  box-sizing: border-box;
+  padding: 4px;
+  margin-top: 20px;
+
+  .monsterCardText {
+    margin: 0;
+  }
+
+  .monsterInput {
+    border: none;
+    padding: 4px 8px 4px 8px;
+    font-family: $main-font-family;
+    background-color: $gray200;
+    text-align: center;
+    color: $black;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .numberInput {
+    width: 100%;
+    margin-left: 8px;
+  }
+
+  .epInput {
+    width: 100%;
+    margin-left: 8px;
+  }
+
+  .inputError {
+    background-color: $error;
+  }
+
+  .monsterInputBlock {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+
+.resultsBlock {
+  display: flex;
+  flex-flow: column nowrap;
+
+  .resultRow {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+
+    .title {
+      margin: 0;
+      font-weight: normal;
+    }
+
+    .mainText {
+      margin: 0 0 0 20px;
+      padding: 4px 40px 4px 40px;
+      font-size: 60px;
+      line-height: 60px;
+      font-weight: bold;
+    }
+  }
+}

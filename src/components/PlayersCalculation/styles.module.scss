@@ -2,7 +2,7 @@
 
 $playerBlockWidth: 60%;
 
-.mainBlock {
+.playersCalculationBlock {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
@@ -61,4 +61,12 @@ $playerBlockWidth: 60%;
   .resultsHeader {
     margin: 0 0 20px 0;
   }
+}
+
+.add {
+  margin-left: 20px;
+}
+
+.delete {
+  margin-right: 20px;
 }
