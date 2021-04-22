@@ -1,29 +1,18 @@
 import React from 'react';
 
+import { changeMonstersCount } from './utils';
+
 import { CircleButton } from 'components/Common/CircleButton';
 import { MonsterCard } from './MonsterCard';
 
 import { BUTTON_TYPE } from 'constants/common';
-import { DEFAULT_MONSTER } from 'constants/monsters';
+import { MONSTER_MIN_COUNT } from 'constants/monsters';
 
 import styles from './styles.module.scss';
 
 export const MonstersBlock = ({ monsters, onMonstersChange }) => {
   const onMonstersButtonClick = (type) => {
-    const newMonsters = [...monsters];
-
-    if (type === BUTTON_TYPE.ADD) {
-      newMonsters.push({
-        ...DEFAULT_MONSTER,
-        name: monsters.length + 1, 
-      });
-    } else {
-      if (monsters.length === 1) {
-        return null;
-      }
-
-      newMonsters.pop();
-    }
+    const newMonsters = changeMonstersCount(monsters, type);
 
     onMonstersChange(newMonsters);    
   };
@@ -35,6 +24,20 @@ export const MonstersBlock = ({ monsters, onMonstersChange }) => {
     onMonstersChange(newMonsters);
   };
 
+  const rednerDeleteButton = () => {
+    if (monsters.length === MONSTER_MIN_COUNT) {
+      return null;
+    }
+
+    return (
+      <CircleButton
+        styleClass={styles.monsterTopButton}
+        type={BUTTON_TYPE.DELETE}
+        onClick={onMonstersButtonClick}
+      />
+    );
+  };
+
   const renderMonstersCards = monsters.map((monster, index) => (
     <MonsterCard key={index} index={index} monster={monster} onChange={onMonserChange} />
   ));
@@ -42,8 +45,11 @@ export const MonstersBlock = ({ monsters, onMonstersChange }) => {
   return (
     <div className={styles.monstersBlock}>
       <div className={styles.monstersButtons}>
-        <CircleButton type={BUTTON_TYPE.DELETE} onClick={onMonstersButtonClick} />
-        <CircleButton type={BUTTON_TYPE.ADD} onClick={onMonstersButtonClick} />
+        {rednerDeleteButton()}
+        <CircleButton
+          type={BUTTON_TYPE.ADD}
+          onClick={onMonstersButtonClick}
+        />
       </div>
       <div className={styles.monsterCardsBlock}>{renderMonstersCards}</div>
     </div>

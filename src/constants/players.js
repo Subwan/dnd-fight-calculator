@@ -11,6 +11,12 @@ export const PLAYERS_COUNT = {
   MAX: 8,
 };
 
+export const PLAYERS_COUNT_LEVELS = {
+  FEW: 'few',
+  AVARAGE: 'avarage',
+  MANY: 'many'
+};
+
 export const FIGHT_DIFFICULT_TYPE = {
   EASY: 'easy',
   MEDIUM: 'medium',

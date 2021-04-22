@@ -1,30 +1,17 @@
 import React from 'react';
 
+import { changePlayersLevel, chagePlayersCount } from './utils';
+
 import { CircleButton } from 'components/Common/CircleButton';
 import { PlayerCard } from './PlayerCard';
 
-import { PLAYERS_COUNT, LEVELS } from 'constants/players';
 import { BUTTON_TYPE } from 'constants/common';
 
 import styles from './styles.module.scss';
 
 export const PlayersBlock = ({players, onPlayersChange}) => {
   const onPlayersButtonClick = (type) => {
-    const newPlayers = [...players];
-    
-    if (type === BUTTON_TYPE.ADD) {
-      if (players.length >= PLAYERS_COUNT.MAX) {
-        return null;
-      }
-
-      newPlayers.push(players[0]);
-    } else {
-      if (players.length <= PLAYERS_COUNT.MIN) {
-        return null;
-      }
-
-      newPlayers.pop();
-    }
+    const newPlayers = chagePlayersCount(players, type);
 
     onPlayersChange(newPlayers);
   };
@@ -37,25 +24,7 @@ export const PlayersBlock = ({players, onPlayersChange}) => {
   };
 
   const onLevelsButtonClick = (type) => {
-    let newPlayers = [];
-    
-    if (type === BUTTON_TYPE.ADD) {
-      newPlayers = players.map((level, index) => {
-        if (level >= LEVELS.MAX) {
-          return level;
-        }
-
-        return level + 1;
-      });
-    } else {
-      newPlayers = players.map((level, index) => {
-        if (level <= LEVELS.MIN) {
-          return level;
-        }
-
-        return level - 1;
-      });
-    }
+    const newPlayers = changePlayersLevel(players, type);
 
     onPlayersChange(newPlayers);
   };

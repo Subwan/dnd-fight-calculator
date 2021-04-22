@@ -22,7 +22,11 @@ $mosterCardHeight: 100px;
     height: $mosterCardHeight;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: flex-end;
+  }
+  
+  .monsterTopButton {
+    margin-bottom: calc(#{$mosterCardHeight} - 30px - 30px);
   }
 
   .monsterCardsBlock {
@@ -94,10 +98,22 @@ $mosterCardHeight: 100px;
 
     .mainText {
       margin: 0 0 0 20px;
-      padding: 4px 40px 4px 40px;
       font-size: 60px;
       line-height: 60px;
       font-weight: bold;
     }
+
+    .monsersEpText {
+      padding: 4px 40px 4px 40px;
+    }
+
+    .divisorNumber {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+
+  .experience {
+    margin-top: 150px;
   }
 }
