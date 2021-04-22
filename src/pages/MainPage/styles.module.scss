@@ -1,0 +1,16 @@
+.mainPage {
+  width: 60%;
+  margin: auto;
+}
+
+@media screen and (max-width: 1240px) {
+  .mainPage {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mainPage {
+    width: 100%;
+  }
+}
