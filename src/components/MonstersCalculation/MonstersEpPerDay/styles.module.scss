@@ -1,0 +1,41 @@
+@import 'assets/colors';
+@import 'assets/fonts';
+
+
+.epRow {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 60px;
+
+  .title {
+    margin: 0 0 20px 0;
+    font-weight: normal;
+  }
+
+  .buttonsBlock {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 20px;
+
+    .epButton {
+      padding: 4px 8px 4px 8px;
+      border: none;
+      cursor: pointer;
+      background-color: $gray300;
+      font-family: $main-font-family;
+      color: $black;
+    }
+
+    .marginRight {
+      margin-right: 20px;
+    }
+  }
+
+  .mainText {
+    margin: 0;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: bold;
+  }
+}

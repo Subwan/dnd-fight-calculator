@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { calculateMonstersEP, getMonstersEPWithoutMultiplier } from './utils';
+import { calculateMonstersEP } from './utils';
+
+import { MonstersEpPerDay } from './MonstersEpPerDay';
 
 import styles from './styles.module.scss';
 
 export const MonsterResults = ({ players, monsters }) => {
-  const { monstersEP, difficultColorClass } = calculateMonstersEP(monsters, players);
-  const monstersEPWithoutMultiplier = getMonstersEPWithoutMultiplier(monsters);
+  const { monstersEP, difficultColorClass, monstersEPWithoutMultiplier } = calculateMonstersEP(monsters, players);
 
   const expiriencePerPlayer = Math.round(monstersEPWithoutMultiplier / players.length);
 
@@ -26,6 +27,7 @@ export const MonsterResults = ({ players, monsters }) => {
           {` = ${expiriencePerPlayer}`}
         </p>
       </div>
+      <MonstersEpPerDay monstersEP={monstersEP} players={players} />
     </div>
   );
 }

@@ -16,6 +16,8 @@ export const DEFAULT_MONSETS = [{...DEFAULT_MONSTER}];
 
 export const MONSTER_MIN_COUNT = 1;
 
+export const MONSTERS_DEFAULT_EP_PER_DAY = 0;
+
 export const MONSTERS_MULTIPLIERS = {
   1: {
     [PLAYERS_COUNT_LEVELS.FEW]: 1.5,

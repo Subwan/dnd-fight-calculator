@@ -1,4 +1,4 @@
-import { difficultCalculate } from 'utils/calculation';
+import { difficultCalculate, epPerDayCalculate } from 'utils/calculation';
 
 import { FIGHT_DIFFICULT_TYPE, PLAYERS_COUNT_LEVELS } from 'constants/players';
 import { BUTTON_TYPE } from 'constants/common';
@@ -38,7 +38,7 @@ const monstersMultiplier = (value, count, playersLength) => {
   };
 };
 
-export const getMonstersEPWithoutMultiplier = (monsters) => (
+const getMonstersEPWithoutMultiplier = (monsters) => (
   monsters.reduce((acc, currentValue) => (
     acc + currentValue.EP * currentValue.number
     ), 0)
@@ -46,12 +46,16 @@ export const getMonstersEPWithoutMultiplier = (monsters) => (
 
 const getMostersEp = (monsters, playersLength) => {
   const monstersEPWithoutMultiplier = getMonstersEPWithoutMultiplier(monsters);
-
   const monstersCount = monsters.reduce((acc, currentValue) => (
     acc + currentValue.number
     ), 0);
 
-  return monstersMultiplier(monstersEPWithoutMultiplier, monstersCount, playersLength);
+  const monstersEP = monstersMultiplier(monstersEPWithoutMultiplier, monstersCount, playersLength);
+
+  return {
+    monstersEP,
+    monstersEPWithoutMultiplier,
+  };
 };
 
 const getDifficultColorClass = (players, monstersEP) => {
@@ -65,10 +69,10 @@ const getDifficultColorClass = (players, monstersEP) => {
 };
 
 export const calculateMonstersEP = (monsters, players) => {
-  const monstersEP = getMostersEp(monsters, players.length);
+  const {monstersEP, monstersEPWithoutMultiplier} = getMostersEp(monsters, players.length);
   const difficultColorClass = getDifficultColorClass(players, monstersEP);
 
-  return { monstersEP, difficultColorClass };
+  return { monstersEP, difficultColorClass, monstersEPWithoutMultiplier };
 };
 
 export const changeMonstersCount = (monsters, type) => {
@@ -88,4 +92,10 @@ export const changeMonstersCount = (monsters, type) => {
   }
 
   return newMonsters;
+};
+
+export const getEpPerDayDifficult = (players, monsterEpPerDay) => {
+  const epPerDay = epPerDayCalculate(players);
+
+  return epPerDay < monsterEpPerDay ? FIGHT_DIFFICULT_TYPE.DEADLY : '';
 };
