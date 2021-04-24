@@ -9,7 +9,7 @@ export const MONSTER_FIELDS = {
 export const DEFAULT_MONSTER = {
   [MONSTER_FIELDS.NAME]: '1',
   [MONSTER_FIELDS.NUMBER]: 1,
-  [MONSTER_FIELDS.EP]: 25, 
+  [MONSTER_FIELDS.EP]: 50, 
 };
 
 export const DEFAULT_MONSETS = [{...DEFAULT_MONSTER}];
