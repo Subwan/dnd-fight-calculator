@@ -9,11 +9,11 @@ const getPlayersContLevel = (playersLength) => {
     case (playersLength <= 2):
       return PLAYERS_COUNT_LEVELS.FEW;
     case (playersLength <= 5):
-      return PLAYERS_COUNT_LEVELS.AVARAGE;
+      return PLAYERS_COUNT_LEVELS.AVERAGE;
     case (playersLength >= 6): 
       return PLAYERS_COUNT_LEVELS.MANY;
     default:
-      return PLAYERS_COUNT_LEVELS.AVARAGE;
+      return PLAYERS_COUNT_LEVELS.AVERAGE;
   };
 };
 
@@ -44,7 +44,7 @@ const getMonstersEPWithoutMultiplier = (monsters) => (
     ), 0)
 );
 
-const getMostersEp = (monsters, playersLength) => {
+const getMonstersEp = (monsters, playersLength) => {
   const monstersEPWithoutMultiplier = getMonstersEPWithoutMultiplier(monsters);
   const monstersCount = monsters.reduce((acc, currentValue) => (
     acc + currentValue.number
@@ -69,7 +69,7 @@ const getDifficultColorClass = (players, monstersEP) => {
 };
 
 export const calculateMonstersEP = (monsters, players) => {
-  const {monstersEP, monstersEPWithoutMultiplier} = getMostersEp(monsters, players.length);
+  const {monstersEP, monstersEPWithoutMultiplier} = getMonstersEp(monsters, players.length);
   const difficultColorClass = getDifficultColorClass(players, monstersEP);
 
   return { monstersEP, difficultColorClass, monstersEPWithoutMultiplier };

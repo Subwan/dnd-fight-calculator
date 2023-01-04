@@ -13,7 +13,7 @@ export const PLAYERS_COUNT = {
 
 export const PLAYERS_COUNT_LEVELS = {
   FEW: 'few',
-  AVARAGE: 'avarage',
+  AVERAGE: 'average',
   MANY: 'many'
 };
 
